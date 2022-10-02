@@ -55,7 +55,7 @@ export class Particle {
             let index = x + y * this.cols;
             let force = vectors[index];
             this.applyForce(force);
-            p5.stroke(p5.color(255, 255, 255, 150));
+            p5.stroke(p5.color(255, 255, 255, 100));
         };
     }
 }

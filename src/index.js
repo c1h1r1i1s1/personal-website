@@ -104,7 +104,7 @@ class App extends React.Component {
       this.particles[i].show();
     }
 
-    if (p5.random(10) > 5 && this.particles.length < 500) {
+    if (p5.random(10) > 9 && this.particles.length < 500) {
       let rnd = p5.floor(p5.noise(this.zoff) * 20);
       for (let i = 0; i < rnd; i++) {
         this.particles.push(new Particle(p5));
