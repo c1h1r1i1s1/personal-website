@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import Sketch from "react-p5";
 import {Particle} from "./particle.js";
 import './index.css';
+import Profile from "./Profile.png";
 
 class App extends React.Component {
 
@@ -58,7 +59,7 @@ class App extends React.Component {
       this.updated = false;
       p5.resizeCanvas(this.state.width, this.state.height);
     }
-    p5.background(p5.color(0, 0, 0, 100));
+    p5.background(p5.color(22, 22, 22, 150));
 
     // loop over grid to calculate noise
     let yoff = this.start;
@@ -137,11 +138,16 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="App">
-				<Sketch setup={this.setup} draw={this.draw} />
+        <Sketch setup={this.setup} draw={this.draw} />
+        <div class="overlayContainer">
+          <h1 id="firstName">Christian</h1>
+          <img src={Profile} alt="Profile" />
+          <h1 id="lastName">Fane</h1>
+        </div>
 			</div>
 		);
 	}
 }
-
+//
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
