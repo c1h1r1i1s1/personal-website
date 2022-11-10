@@ -4,8 +4,7 @@
   width:100%; height:100%;
 }
 html, body {
-  color: #1BA;
-  background-color: #000;
+  background-color: rgb(22, 22, 22);
   width: 100%;
   margin: 0px;
   padding: 0px;
@@ -23,6 +22,7 @@ canvas {
   width: 100%;
   height: 100%;
 }
+
 img {
   border-radius: 8px;
   position: relative;
@@ -31,28 +31,85 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  top: 10%;
+  top: 35%;
+  animation: fadeIn 3s;
 }
 
 h1 {
-  font-family: sans-serif;
-  font-size: 3em;
+  /* color: rgb(107, 160, 209); */
+  color: rgb(241, 112, 112);
+  font-family: playFair;
+  font-size: 6vmax;
   text-align: center;
-  /* width: 100%; */
+  width: 100%;
 }
 
 #firstName {
   position: absolute;
-  left: -5%;
+  display: block;
   z-index: 5;
-  top: -1%;
+  top: 5%;
+  text-indent: 0vw;
+  animation: slide-right 2s;
 }
 
 #lastName {
   position: absolute;
-  left: 5%;
+  display: block;
+  text-indent: 0vw;
   z-index: 5;
-  top: 55%;
+  top: 12%;
+  animation: slide-left 2s;
+}
+
+.menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: rgb(150, 150, 255);
+  font-family: playFair;
+  width: 100%;
+  text-align: left;
+}
+
+h2 {
+  display: inline-block;
+  padding-left: 3%;
+}
+
+@keyframes slide-left {
+  from {
+    text-indent: -150vw;
+  }
+
+  to {
+    text-indent: 18vw;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    text-indent: 120vw;
+  }
+
+  to {
+    text-indent: -5vw;
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@font-face {
+  font-family: dosis;
+  src: url(Dosis-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: playFair;
+  src: url(PlayfairDisplay-VariableFont_wght.ttf);
 }
 
 /* * {

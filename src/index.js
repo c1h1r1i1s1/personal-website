@@ -20,11 +20,11 @@ class App extends React.Component {
   angle;
   m;
   start = 0;
-  scl = 20;
+  scl = 20; //20 usually
 
   updated = false;
 
-  numParticles = 400;
+  numParticles = 50; //200
   particles = [];
   flowfield;
 
@@ -59,7 +59,7 @@ class App extends React.Component {
       this.updated = false;
       p5.resizeCanvas(this.state.width, this.state.height);
     }
-    p5.background(p5.color(22, 22, 22, 150));
+    p5.background(p5.color(50, 50, 50, 100)); //50,50,50,200
 
     // loop over grid to calculate noise
     let yoff = this.start;
@@ -105,12 +105,12 @@ class App extends React.Component {
       this.particles[i].show();
     }
 
-    if (p5.random(10) > 9 && this.particles.length < 500) {
+    if (p5.random(100) > 99 && this.particles.length < 50) { //300
       let rnd = p5.floor(p5.noise(this.zoff) * 20);
       for (let i = 0; i < rnd; i++) {
         this.particles.push(new Particle(p5));
       }
-    } else if (this.particles.length > 400) {
+    } else if (this.particles.length > 40) { //200
       let rnd = p5.floor(p5.random(10));
       for (let i = 0; i < rnd; i++) {
         this.particles.shift();
@@ -119,7 +119,6 @@ class App extends React.Component {
   }
 
 	setup = (p5, parentRef) => {
-		// p5.createCanvas(window.innerWidth, window.innerHeight).parent(parentRef);
     p5.createCanvas(this.state.width, this.state.height).parent(parentRef);
 		p5.background(0);
     
@@ -140,9 +139,18 @@ class App extends React.Component {
 			<div className="App">
         <Sketch setup={this.setup} draw={this.draw} />
         <div class="overlayContainer">
-          <h1 id="firstName">Christian</h1>
+          <div class="menu">
+            <h2>Home</h2>
+            <h2>Te Araroa</h2>
+            <h2>Climbing</h2>
+            <h2>Projects</h2>
+            <h2>Resume</h2>
+            <h2>Contact</h2>
+          </div>
+
+          <h1 id="firstName">CHRISTIAN</h1>
           <img src={Profile} alt="Profile" />
-          <h1 id="lastName">Fane</h1>
+          <h1 id="lastName">FANE</h1>
         </div>
 			</div>
 		);
